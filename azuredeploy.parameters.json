@@ -1,0 +1,84 @@
+﻿{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "deploymentId": {
+      "value": "sc92XP"
+    },
+    "location": {
+      "value": "Australia SouthEast"
+    },
+    "sitecoreAdminPassword": {
+      "value": "selectdigital"
+    },
+    "licenseXml": {
+      "value": "C:\\Sitecore\\Files\\license.xml"
+    },
+    "repAuthenticationApiKey": {
+      "value": "6836e0f4-8748-4655-bd85-53ef282f738e"
+    },
+    "sqlServerLogin": {
+      "value": "scselectdigitaladmin"
+    },
+    "sqlServerPassword": {
+      "value": "sItec0reselectdigital!"
+    },
+    "siMsDeployPackageUrl": {
+      "value": "https://selectdigitalstorage.blob.core.windows.net/sc92package/Sitecore.IdentityServer.3.0.0-r00211.scwdp.zip?sp=rl&st=2019-10-22T00:19:46Z&se=2019-12-23T00:19:00Z&sv=2019-02-02&sr=c&sig=8CzYOA3ceLLdFClf7Nw4u2fkt0JfeUVx%2FiLnrlrc%2FUw%3D"
+    },
+    "cmMsDeployPackageUrl": {
+      "value": "https://selectdigitalstorage.blob.core.windows.net/sc92package/Sitecore 9.2.0 rev. 002893 (Cloud)_cm.scwdp.zip?sp=rl&st=2019-10-22T00:19:46Z&se=2019-12-23T00:19:00Z&sv=2019-02-02&sr=c&sig=8CzYOA3ceLLdFClf7Nw4u2fkt0JfeUVx%2FiLnrlrc%2FUw%3D"
+    },
+    "cdMsDeployPackageUrl": {
+      "value": "https://selectdigitalstorage.blob.core.windows.net/sc92package/Sitecore 9.2.0 rev. 002893 (Cloud)_cd.scwdp.zip?sp=rl&st=2019-10-22T00:19:46Z&se=2019-12-23T00:19:00Z&sv=2019-02-02&sr=c&sig=8CzYOA3ceLLdFClf7Nw4u2fkt0JfeUVx%2FiLnrlrc%2FUw%3D"
+    },
+    "prcMsDeployPackageUrl": {
+      "value": "https://selectdigitalstorage.blob.core.windows.net/sc92package/Sitecore 9.2.0 rev. 002893 (Cloud)_prc.scwdp.zip?sp=rl&st=2019-10-22T00:19:46Z&se=2019-12-23T00:19:00Z&sv=2019-02-02&sr=c&sig=8CzYOA3ceLLdFClf7Nw4u2fkt0JfeUVx%2FiLnrlrc%2FUw%3D"
+    },
+    "repMsDeployPackageUrl": {
+      "value": "https://selectdigitalstorage.blob.core.windows.net/sc92package/Sitecore 9.2.0 rev. 002893 (Cloud)_rep.scwdp.zip?sp=rl&st=2019-10-22T00:19:46Z&se=2019-12-23T00:19:00Z&sv=2019-02-02&sr=c&sig=8CzYOA3ceLLdFClf7Nw4u2fkt0JfeUVx%2FiLnrlrc%2FUw%3D"
+    },
+    "xcRefDataMsDeployPackageUrl": {
+      "value": "https://selectdigitalstorage.blob.core.windows.net/sc92package/Sitecore 9.2.0 rev. 002893 (Cloud)_xp1referencedata.scwdp.zip?sp=rl&st=2019-10-22T00:19:46Z&se=2019-12-23T00:19:00Z&sv=2019-02-02&sr=c&sig=8CzYOA3ceLLdFClf7Nw4u2fkt0JfeUVx%2FiLnrlrc%2FUw%3D"
+    },
+    "xcCollectMsDeployPackageUrl": {
+      "value": "https://selectdigitalstorage.blob.core.windows.net/sc92package/Sitecore 9.2.0 rev. 002893 (Cloud)_xp1collection.scwdp.zip?sp=rl&st=2019-10-22T00:19:46Z&se=2019-12-23T00:19:00Z&sv=2019-02-02&sr=c&sig=8CzYOA3ceLLdFClf7Nw4u2fkt0JfeUVx%2FiLnrlrc%2FUw%3D"
+    },
+    "xcSearchMsDeployPackageUrl": {
+      "value": "https://selectdigitalstorage.blob.core.windows.net/sc92package/Sitecore 9.2.0 rev. 002893 (Cloud)_xp1collectionsearch.scwdp.zip?sp=rl&st=2019-10-22T00:19:46Z&se=2019-12-23T00:19:00Z&sv=2019-02-02&sr=c&sig=8CzYOA3ceLLdFClf7Nw4u2fkt0JfeUVx%2FiLnrlrc%2FUw%3D"
+    },
+    "cortexProcessingMsDeployPackageUrl": {
+      "value": "https://selectdigitalstorage.blob.core.windows.net/sc92package/Sitecore 9.2.0 rev. 002893 (Cloud)_xp1cortexprocessing.scwdp.zip?sp=rl&st=2019-10-22T00:19:46Z&se=2019-12-23T00:19:00Z&sv=2019-02-02&sr=c&sig=8CzYOA3ceLLdFClf7Nw4u2fkt0JfeUVx%2FiLnrlrc%2FUw%3D"
+    },
+    "cortexReportingMsDeployPackageUrl": {
+      "value": "https://selectdigitalstorage.blob.core.windows.net/sc92package/Sitecore 9.2.0 rev. 002893 (Cloud)_xp1cortexreporting.scwdp.zip?sp=rl&st=2019-10-22T00:19:46Z&se=2019-12-23T00:19:00Z&sv=2019-02-02&sr=c&sig=8CzYOA3ceLLdFClf7Nw4u2fkt0JfeUVx%2FiLnrlrc%2FUw%3D"
+    },
+    "maOpsMsDeployPackageUrl": {
+      "value": "https://selectdigitalstorage.blob.core.windows.net/sc92package/Sitecore 9.2.0 rev. 002893 (Cloud)_xp1marketingautomation.scwdp.zip?sp=rl&st=2019-10-22T00:19:46Z&se=2019-12-23T00:19:00Z&sv=2019-02-02&sr=c&sig=8CzYOA3ceLLdFClf7Nw4u2fkt0JfeUVx%2FiLnrlrc%2FUw%3D"
+    },
+    "maRepMsDeployPackageUrl": {
+      "value": "https://selectdigitalstorage.blob.core.windows.net/sc92package/Sitecore 9.2.0 rev. 002893 (Cloud)_xp1marketingautomationreporting.scwdp.zip?sp=rl&st=2019-10-22T00:19:46Z&se=2019-12-23T00:19:00Z&sv=2019-02-02&sr=c&sig=8CzYOA3ceLLdFClf7Nw4u2fkt0JfeUVx%2FiLnrlrc%2FUw%3D"
+    },
+    "authCertificateBlob": {
+      "value": ""
+    },
+    "authCertificatePassword": {
+      "value": "sItec0reselectdigital!"
+    },
+    "allowInvalidClientCertificates": {
+      "value": true
+    },
+    "aseName":{
+      "value": "tal-shared-asev2"
+    },
+    "aseResourceGroupName":{
+      "value": "TAL-MEL-DevTest-RG"
+    },
+    "applicationInsightsLocation": {
+      "value": "Australia East"
+    },
+    "templateLinkAccessToken": {
+      "value": ""
+    }	
+  }
+}

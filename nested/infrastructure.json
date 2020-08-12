@@ -178,8 +178,8 @@
             "type": "String"
         },
         "authCertificateBlob": {
-            "type": "securestring",
-            "minLength": 1
+            "minLength": 1,
+            "type": "SecureString"
         },
         "authCertificatePassword": {
             "minLength": 1,
@@ -727,9 +727,6 @@
         "appInsightsNameTidy": "[toLower(trim(parameters('applicationInsightsName')))]",
         "applicationInsightsPricePlanTidy": "[toLower(trim(parameters('applicationInsightsPricePlan')))]",
         "authCertificateNameTidy": "[toLower(trim(parameters('authCertificateName')))]",
-        "aseCertificateNameTidy": "[toLower(trim(parameters('aseCertificateName')))]",
-        "interCertificateNameTidy": "[toLower(trim(parameters('interCertificateName')))]",
-        "rootCertificateNameTidy": "[toLower(trim(parameters('rootCertificateName')))]",
         "sitecoreTags": {
             "provider": "b51535c2-ab3e-4a68-95f8-e2e3c9a19299",
             "si": "si",
@@ -943,7 +940,7 @@
                 "siteConfig": {
                     "use32BitWorkerProcess": false,
                     "alwaysOn": true,
-                    "phpVersion": "7.3",
+                    "phpVersion": "",
                     "defaultDocuments": [
                         "index.html"
                     ],
@@ -979,7 +976,7 @@
                 "siteConfig": {
                     "use32BitWorkerProcess": false,
                     "alwaysOn": true,
-                    "phpVersion": "7.3",
+                    "phpVersion": "",
                     "defaultDocuments": [
                         "index.html"
                     ]
@@ -1009,7 +1006,7 @@
                 "siteConfig": {
                     "use32BitWorkerProcess": false,
                     "alwaysOn": true,
-                    "phpVersion": "7.3",
+                    "phpVersion": "",
                     "defaultDocuments": [
                         "index.html"
                     ]
@@ -1039,7 +1036,7 @@
                 "siteConfig": {
                     "use32BitWorkerProcess": false,
                     "alwaysOn": true,
-                    "phpVersion": "7.3",
+                    "phpVersion": "",
                     "defaultDocuments": [
                         "index.html"
                     ]
@@ -1069,7 +1066,7 @@
                 "siteConfig": {
                     "use32BitWorkerProcess": false,
                     "alwaysOn": true,
-                    "phpVersion": "7.3",
+                    "phpVersion": "",
                     "defaultDocuments": [
                         "index.html"
                     ]

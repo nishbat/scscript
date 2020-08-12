@@ -195,7 +195,7 @@
         "siteConfig": {
           "use32BitWorkerProcess": false,
           "alwaysOn": true,
-          "phpVersion": "",
+          "phpVersion": "7.3",
           "defaultDocuments": [
             "index.html"
           ]
@@ -222,7 +222,7 @@
         "siteConfig": {
           "use32BitWorkerProcess": false,
           "alwaysOn": true,
-          "phpVersion": "",
+          "phpVersion": "7.3",
           "defaultDocuments": [
             "index.html"
           ]

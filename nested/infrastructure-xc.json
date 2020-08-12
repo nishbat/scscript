@@ -340,7 +340,35 @@
     "aseResourceGroupName":{
       "type": "string",
       "defaultValue": "[resourceGroup().name]"
-    }
+    },
+	"environment": {
+		"defaultValue": "qa",
+		"type": "String"
+	},
+	"team-pod": {
+		"defaultValue": "direct-pod-6-apollo",
+		"type": "String"
+	},
+	"platform": {
+		"defaultValue": "direct",
+		"type": "String"
+	},
+	"infra-app": {
+		"defaultValue": "application",
+		"type": "String"
+	},
+	"business-service": {
+		"defaultValue": "direct-digital",
+		"type": "String"
+	},
+	"data-classification": {
+		"defaultValue": "no-data",
+		"type": "String"
+	},
+	"application-service": {
+		"defaultValue": "select-digital",
+		"type": "String"
+	}
   },
   "resources": [
     {
@@ -354,7 +382,13 @@
       "properties": "[if(not(variables('useAse')), variables('hostingPlanProperties').xcBasicProperties, variables('hostingPlanProperties').xcBasicPropertiesWithASE)]",
       "location": "[parameters('location')]",
       "tags": {
-        "provider": "[variables('sitecoreTags').provider]",
+		"environment": "[parameters('environment')]",
+		"team-pod": "[parameters('team-pod')]",
+		"platform": "[parameters('platform')]",
+		"infra-app": "[parameters('infra-app')]",
+		"business-service": "[parameters('business-service')]",
+		"data-classification": "[parameters('data-classification')]",
+		"application-service": "[parameters('application-service')]",
         "logicalName": "[variables('sitecoreTags').xc]"
       }
     },
@@ -369,7 +403,13 @@
       "properties": "[if(not(variables('useAse')), variables('hostingPlanProperties').xcResourceIntensiveProperties, variables('hostingPlanProperties').xcResourceIntensivePropertiesWithASE)]",
       "location": "[parameters('location')]",
       "tags": {
-        "provider": "[variables('sitecoreTags').provider]",
+		"environment": "[parameters('environment')]",
+		"team-pod": "[parameters('team-pod')]",
+		"platform": "[parameters('platform')]",
+		"infra-app": "[parameters('infra-app')]",
+		"business-service": "[parameters('business-service')]",
+		"data-classification": "[parameters('data-classification')]",
+		"application-service": "[parameters('application-service')]",
         "logicalName": "[variables('sitecoreTags').xc]"
       },
       "dependsOn": [
@@ -397,7 +437,13 @@
         "[resourceId('Microsoft.Web/serverfarms', variables('xcResourceIntensiveHostingPlanNameTidy'))]"
       ],
       "tags": {
-        "provider": "[variables('sitecoreTags').provider]",
+		"environment": "[parameters('environment')]",
+		"team-pod": "[parameters('team-pod')]",
+		"platform": "[parameters('platform')]",
+		"infra-app": "[parameters('infra-app')]",
+		"business-service": "[parameters('business-service')]",
+		"data-classification": "[parameters('data-classification')]",
+		"application-service": "[parameters('application-service')]",
         "logicalName": "[variables('sitecoreTags').xcRefData]"
       }
     },
@@ -426,7 +472,13 @@
         }
       ],
       "tags": {
-        "provider": "[variables('sitecoreTags').provider]",
+		"environment": "[parameters('environment')]",
+		"team-pod": "[parameters('team-pod')]",
+		"platform": "[parameters('platform')]",
+		"infra-app": "[parameters('infra-app')]",
+		"business-service": "[parameters('business-service')]",
+		"data-classification": "[parameters('data-classification')]",
+		"application-service": "[parameters('application-service')]",
         "logicalName": "[variables('sitecoreTags').xcRefData]"
       }
     },
@@ -451,7 +503,13 @@
         "[resourceId('Microsoft.Web/serverfarms', variables('xcResourceIntensiveHostingPlanNameTidy'))]"
       ],
       "tags": {
-        "provider": "[variables('sitecoreTags').provider]",
+		"environment": "[parameters('environment')]",
+		"team-pod": "[parameters('team-pod')]",
+		"platform": "[parameters('platform')]",
+		"infra-app": "[parameters('infra-app')]",
+		"business-service": "[parameters('business-service')]",
+		"data-classification": "[parameters('data-classification')]",
+		"application-service": "[parameters('application-service')]",
         "logicalName": "[variables('sitecoreTags').xcCollect]"
       }
     },
@@ -480,7 +538,13 @@
         }
       ],
       "tags": {
-        "provider": "[variables('sitecoreTags').provider]",
+		"environment": "[parameters('environment')]",
+		"team-pod": "[parameters('team-pod')]",
+		"platform": "[parameters('platform')]",
+		"infra-app": "[parameters('infra-app')]",
+		"business-service": "[parameters('business-service')]",
+		"data-classification": "[parameters('data-classification')]",
+		"application-service": "[parameters('application-service')]",
         "logicalName": "[variables('sitecoreTags').xcShardMapManager]"
       }
     },
@@ -509,7 +573,13 @@
         }
       ],
       "tags": {
-        "provider": "[variables('sitecoreTags').provider]",
+		"environment": "[parameters('environment')]",
+		"team-pod": "[parameters('team-pod')]",
+		"platform": "[parameters('platform')]",
+		"infra-app": "[parameters('infra-app')]",
+		"business-service": "[parameters('business-service')]",
+		"data-classification": "[parameters('data-classification')]",
+		"application-service": "[parameters('application-service')]",
         "logicalName": "[variables('sitecoreTags').xcShard0]"
       }
     },
@@ -538,7 +608,13 @@
         }
       ],
       "tags": {
-        "provider": "[variables('sitecoreTags').provider]",
+		"environment": "[parameters('environment')]",
+		"team-pod": "[parameters('team-pod')]",
+		"platform": "[parameters('platform')]",
+		"infra-app": "[parameters('infra-app')]",
+		"business-service": "[parameters('business-service')]",
+		"data-classification": "[parameters('data-classification')]",
+		"application-service": "[parameters('application-service')]",
         "logicalName": "[variables('sitecoreTags').xcShard1]"
       }
     },
@@ -563,7 +639,13 @@
         "[resourceId('Microsoft.Web/serverfarms', variables('xcBasicHostingPlanNameTidy'))]"
       ],
       "tags": {
-        "provider": "[variables('sitecoreTags').provider]",
+		"environment": "[parameters('environment')]",
+		"team-pod": "[parameters('team-pod')]",
+		"platform": "[parameters('platform')]",
+		"infra-app": "[parameters('infra-app')]",
+		"business-service": "[parameters('business-service')]",
+		"data-classification": "[parameters('data-classification')]",
+		"application-service": "[parameters('application-service')]",
         "logicalName": "[variables('sitecoreTags').xcSearch]"
       }
     }

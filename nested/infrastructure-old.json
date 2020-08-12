@@ -178,8 +178,8 @@
             "type": "String"
         },
         "authCertificateBlob": {
-            "type": "securestring",
-            "minLength": 1
+            "minLength": 1,
+            "type": "SecureString"
         },
         "authCertificatePassword": {
             "minLength": 1,
@@ -727,9 +727,6 @@
         "appInsightsNameTidy": "[toLower(trim(parameters('applicationInsightsName')))]",
         "applicationInsightsPricePlanTidy": "[toLower(trim(parameters('applicationInsightsPricePlan')))]",
         "authCertificateNameTidy": "[toLower(trim(parameters('authCertificateName')))]",
-        "aseCertificateNameTidy": "[toLower(trim(parameters('aseCertificateName')))]",
-        "interCertificateNameTidy": "[toLower(trim(parameters('interCertificateName')))]",
-        "rootCertificateNameTidy": "[toLower(trim(parameters('rootCertificateName')))]",
         "sitecoreTags": {
             "provider": "b51535c2-ab3e-4a68-95f8-e2e3c9a19299",
             "si": "si",
@@ -1470,33 +1467,6 @@
                 }
             },
             "condition": "[parameters('useApplicationInsights')]"
-        },
-        {
-            "type": "Microsoft.Web/certificates",
-            "apiVersion": "[variables('certificateApiVersion')]",
-            "name": "[variables('authCertificateNameTidy')]",
-            "location": "[parameters('location')]",
-            "dependsOn": [
-                "[resourceId('Microsoft.Web/serverfarms', variables('siHostingPlanNameTidy'))]",
-                "[resourceId('Microsoft.Web/serverfarms', variables('cmHostingPlanNameTidy'))]",
-                "[resourceId('Microsoft.Web/serverfarms', variables('cdHostingPlanNameTidy'))]",
-                "[resourceId('Microsoft.Web/serverfarms', variables('prcHostingPlanNameTidy'))]",
-                "[resourceId('Microsoft.Web/serverfarms', variables('repHostingPlanNameTidy'))]"
-            ],
-            "tags": {
-                "environment": "[parameters('environment')]",
-                "team-pod": "[parameters('team-pod')]",
-                "platform": "[parameters('platform')]",
-                "infra-app": "[parameters('infra-app')]",
-                "business-service": "[parameters('business-service')]",
-                "data-classification": "[parameters('data-classification')]",
-                "application-service": "[parameters('application-service')]"
-            },
-            "properties": {
-                "password": "[parameters('authCertificatePassword')]",
-                "pfxBlob": "[parameters('authCertificateBlob')]",
-                "hostingEnvironmentProfile": "[if(variables('useAse'), variables('hostingPlanProperties').authCertificateHostingEnvironmentProfile, '')]"
-            }
         }
     ],
     "outputs": {
@@ -1506,7 +1476,7 @@
                 "sqlServerFqdn": "[reference(concat('Microsoft.Sql/servers/', variables('sqlServerNameTidy'))).fullyQualifiedDomainName]",
                 "siWebAppHostName": "[reference(concat('Microsoft.Web/sites/', variables('siWebAppNameTidy')), variables('webApiVersion')).defaultHostName]",
                 "cmWebAppHostName": "[reference(concat('Microsoft.Web/sites/', variables('cmWebAppNameTidy')), variables('webApiVersion')).defaultHostName]",
-                "authCertificateThumbprint": "[reference(resourceId('Microsoft.Web/certificates', variables('authCertificateNameTidy'))).thumbprint]"
+                "authCertificateThumbprint": "CD97A6520A7C3DA2E57DA479CFA78EB5CF9780CE"
             }
         }
     }

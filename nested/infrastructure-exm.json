@@ -116,7 +116,35 @@
     "aseResourceGroupName":{
       "type": "string",
       "defaultValue": "[resourceGroup().name]"
-    }
+    },
+	"environment": {
+		"defaultValue": "qa",
+		"type": "String"
+	},
+	"team-pod": {
+		"defaultValue": "direct-pod-6-apollo",
+		"type": "String"
+	},
+	"platform": {
+		"defaultValue": "direct",
+		"type": "String"
+	},
+	"infra-app": {
+		"defaultValue": "application",
+		"type": "String"
+	},
+	"business-service": {
+		"defaultValue": "direct-digital",
+		"type": "String"
+	},
+	"data-classification": {
+		"defaultValue": "no-data",
+		"type": "String"
+	},
+	"application-service": {
+		"defaultValue": "select-digital",
+		"type": "String"
+	}
   },
   "resources": [
     {
@@ -130,7 +158,13 @@
       "properties": "[if(not(variables('useAse')), variables('hostingPlanProperties').exmDdsProperties, variables('hostingPlanProperties').exmDdsPropertiesWithASE)]",
       "location": "[parameters('location')]",
       "tags": {
-        "provider": "[variables('sitecoreTags').provider]",
+		"environment": "[parameters('environment')]",
+		"team-pod": "[parameters('team-pod')]",
+		"platform": "[parameters('platform')]",
+		"infra-app": "[parameters('infra-app')]",
+		"business-service": "[parameters('business-service')]",
+		"data-classification": "[parameters('data-classification')]",
+		"application-service": "[parameters('application-service')]",
         "logicalName": "[variables('sitecoreTags').dds]"
       }
     },
@@ -154,7 +188,13 @@
         "[resourceId('Microsoft.Web/serverfarms', variables('exmDdsHostingPlanNameTidy'))]"
       ],
       "tags": {
-        "provider": "[variables('sitecoreTags').provider]",
+		"environment": "[parameters('environment')]",
+		"team-pod": "[parameters('team-pod')]",
+		"platform": "[parameters('platform')]",
+		"infra-app": "[parameters('infra-app')]",
+		"business-service": "[parameters('business-service')]",
+		"data-classification": "[parameters('data-classification')]",
+		"application-service": "[parameters('application-service')]",
         "logicalName": "[variables('sitecoreTags').dds]"
       }
     }

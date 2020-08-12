@@ -118,35 +118,7 @@
     "resourceSizes": {
       "type": "object",
       "defaultValue": "[parameters('skuMap')[parameters('sitecoreSKU')]]"
-    },
-	"environment": {
-		"defaultValue": "qa",
-		"type": "String"
-	},
-	"team-pod": {
-		"defaultValue": "direct-pod-6-apollo",
-		"type": "String"
-	},
-	"platform": {
-		"defaultValue": "direct",
-		"type": "String"
-	},
-	"infra-app": {
-		"defaultValue": "application",
-		"type": "String"
-	},
-	"business-service": {
-		"defaultValue": "direct-digital",
-		"type": "String"
-	},
-	"data-classification": {
-		"defaultValue": "no-data",
-		"type": "String"
-	},
-	"application-service": {
-		"defaultValue": "select-digital",
-		"type": "String"
-	}
+    }
   },
   "resources": [
     {
@@ -174,13 +146,7 @@
         }
       ],
       "tags": {
-		"environment": "[parameters('environment')]",
-		"team-pod": "[parameters('team-pod')]",
-		"platform": "[parameters('platform')]",
-		"infra-app": "[parameters('infra-app')]",
-		"business-service": "[parameters('business-service')]",
-		"data-classification": "[parameters('data-classification')]",
-		"application-service": "[parameters('application-service')]",
+        "provider": "[variables('sitecoreTags').provider]",
         "logicalName": "[variables('sitecoreTags').ma]"
       }
     },
@@ -195,20 +161,14 @@
         "siteConfig": {
           "use32BitWorkerProcess": false,
           "alwaysOn": true,
-          "phpVersion": "",
+          "phpVersion": "7.3",
           "defaultDocuments": [
             "index.html"
           ]
         }
       },
       "tags": {
-		"environment": "[parameters('environment')]",
-		"team-pod": "[parameters('team-pod')]",
-		"platform": "[parameters('platform')]",
-		"infra-app": "[parameters('infra-app')]",
-		"business-service": "[parameters('business-service')]",
-		"data-classification": "[parameters('data-classification')]",
-		"application-service": "[parameters('application-service')]",
+        "provider": "[variables('sitecoreTags').provider]",
         "logicalName": "[variables('sitecoreTags').maRep]"
       }
     },
@@ -222,7 +182,7 @@
         "siteConfig": {
           "use32BitWorkerProcess": false,
           "alwaysOn": true,
-          "phpVersion": "",
+          "phpVersion": "7.3",
           "defaultDocuments": [
             "index.html"
           ]
@@ -230,13 +190,7 @@
       },
       "location": "[parameters('location')]",
       "tags": {
-		"environment": "[parameters('environment')]",
-		"team-pod": "[parameters('team-pod')]",
-		"platform": "[parameters('platform')]",
-		"infra-app": "[parameters('infra-app')]",
-		"business-service": "[parameters('business-service')]",
-		"data-classification": "[parameters('data-classification')]",
-		"application-service": "[parameters('application-service')]",
+        "provider": "[variables('sitecoreTags').provider]",
         "logicalName": "[variables('sitecoreTags').maOps]"
       }
     }

@@ -116,35 +116,7 @@
     "aseResourceGroupName":{
       "type": "string",
       "defaultValue": "[resourceGroup().name]"
-    },
-	"environment": {
-		"defaultValue": "qa",
-		"type": "String"
-	},
-	"team-pod": {
-		"defaultValue": "direct-pod-6-apollo",
-		"type": "String"
-	},
-	"platform": {
-		"defaultValue": "direct",
-		"type": "String"
-	},
-	"infra-app": {
-		"defaultValue": "application",
-		"type": "String"
-	},
-	"business-service": {
-		"defaultValue": "direct-digital",
-		"type": "String"
-	},
-	"data-classification": {
-		"defaultValue": "no-data",
-		"type": "String"
-	},
-	"application-service": {
-		"defaultValue": "select-digital",
-		"type": "String"
-	}
+    }
   },
   "resources": [
     {
@@ -158,13 +130,7 @@
       "properties": "[if(not(variables('useAse')), variables('hostingPlanProperties').exmDdsProperties, variables('hostingPlanProperties').exmDdsPropertiesWithASE)]",
       "location": "[parameters('location')]",
       "tags": {
-		"environment": "[parameters('environment')]",
-		"team-pod": "[parameters('team-pod')]",
-		"platform": "[parameters('platform')]",
-		"infra-app": "[parameters('infra-app')]",
-		"business-service": "[parameters('business-service')]",
-		"data-classification": "[parameters('data-classification')]",
-		"application-service": "[parameters('application-service')]",
+        "provider": "[variables('sitecoreTags').provider]",
         "logicalName": "[variables('sitecoreTags').dds]"
       }
     },
@@ -177,7 +143,7 @@
         "siteConfig": {
           "use32BitWorkerProcess": false,
           "alwaysOn": true,
-          "phpVersion": "",
+          "phpVersion": "7.3",
           "defaultDocuments": [
             "index.html"
           ]
@@ -188,13 +154,7 @@
         "[resourceId('Microsoft.Web/serverfarms', variables('exmDdsHostingPlanNameTidy'))]"
       ],
       "tags": {
-		"environment": "[parameters('environment')]",
-		"team-pod": "[parameters('team-pod')]",
-		"platform": "[parameters('platform')]",
-		"infra-app": "[parameters('infra-app')]",
-		"business-service": "[parameters('business-service')]",
-		"data-classification": "[parameters('data-classification')]",
-		"application-service": "[parameters('application-service')]",
+        "provider": "[variables('sitecoreTags').provider]",
         "logicalName": "[variables('sitecoreTags').dds]"
       }
     }
